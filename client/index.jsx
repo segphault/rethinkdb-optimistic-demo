@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Client from "./client.js";
+import Tundra from "./tundra.js";
 
 let TextField = props =>
   <input type="text" {...props}
@@ -20,7 +20,7 @@ let TodoItem = React.createClass({
       <TextField type="text" defaultValue={this.props.item.text} onEnter={this.editText} />
       <a href="#" onClick={e => this.props.onRemove(this.props.item)}>X</a>
       {this.props.item.pending &&
-        <img className="spinner" src="spinner.svg" width="24" height="24" />}
+        <img className="spinner" src="loading.gif" width="24" height="24" />}
     </div>)
   },
 
@@ -54,7 +54,7 @@ let App = React.createClass({
   },
 
   componentWillMount() {
-    this.client = new Client();
+    this.client = new Tundra("todos");
   },
 
   componentDidMount() {

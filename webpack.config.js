@@ -2,7 +2,6 @@
 module.exports = {
   context: `${__dirname}/client`,
   entry: [
-    "babel-polyfill",
     "uuid",
     "./index.jsx"
   ],
