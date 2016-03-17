@@ -30,6 +30,10 @@ let TodoItem = React.createClass({
 
   editText(e) {
     this.props.onUpdate(this.props.item, {text: e.target.value});
+  },
+
+  shouldComponentUpdate(nextProps) {
+    return nextProps.item != this.props.item;
   }
 });
 

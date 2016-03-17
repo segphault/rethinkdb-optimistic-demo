@@ -7,7 +7,7 @@ let latency = msec =>
 export default class Client {
   constructor() {
     this.socket = io();
-    this.store = new Freezer([])
+    this.store = new Freezer([]);
     this.refresh();
 
     this.socket.on("todos:update", ({old_val, new_val}) => {

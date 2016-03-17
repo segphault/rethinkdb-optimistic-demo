@@ -7902,6 +7902,9 @@
 	  },
 	  editText: function editText(e) {
 	    this.props.onUpdate(this.props.item, { text: e.target.value });
+	  },
+	  shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
+	    return nextProps.item != this.props.item;
 	  }
 	});
 
